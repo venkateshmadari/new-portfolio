@@ -11,8 +11,8 @@ const words = [
   "Olà",
   "やあ",
   "Hallå",
-  "Guten tag",
-  "Hallo",
+  "नमस्ते",
+  "హలో",
 ];
 
 export default function Preloader() {
@@ -45,11 +45,11 @@ export default function Preloader() {
   const curve = {
     initial: {
       d: initialPath,
-      transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] },
+      transition: { duration: 1.2, ease: [0.76, 0, 0.24, 1] },
     },
     exit: {
       d: targetPath,
-      transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: 0.3 },
+      transition: { duration: 1.2, ease: [0.76, 0, 0.24, 1] },
     },
   };
 
@@ -58,20 +58,26 @@ export default function Preloader() {
       variants={slideUp}
       initial="initial"
       exit="exit"
-      className="h-full w-full flex items-center justify-center fixed z-[99] bg-secondary"
+      className="h-full w-full flex items-center justify-center fixed z-[99] bg-black"
     >
       {dimension.width > 0 && (
         <>
-          <motion.p variants={opacity} initial="initial" animate="enter" className="flex text-primary font-semibold text-3xl items-center absolute z-[1]">
-            <span className=" block w-[10px] h-[10px] bg-primary rounded-full mr-2 "></span>
+          <motion.p
+            variants={opacity}
+            initial="initial"
+            animate="enter"
+            className="flex text-primary font-semibold text-3xl items-center justify-center absolute z-[1]"
+          >
+            <span className="text-primary  mr-2 ">✺</span>
             {words[index]}
+            {/* <span className="text-primary  ml-2 ">✺</span> */}
           </motion.p>
           <svg className=" absolute top-0 w-full h-[calc(100%+300px)]">
             <motion.path
               variants={curve}
               initial="initial"
               exit="exit"
-              className="fill-secondary"
+              className="black"
             ></motion.path>
           </svg>
         </>
