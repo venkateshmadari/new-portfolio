@@ -1,4 +1,5 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
 
 .introduction svg {
     position: absolute;
@@ -8,7 +9,7 @@
 }
 
 .introduction svg path {
-    fill: #141516;
+    fill: #FF3600;
 }
 
 .introduction p {

@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 
 const Menu = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const enableMode = () => {
     setDarkMode(!darkMode);
   };
@@ -10,7 +10,7 @@ const Menu = () => {
 
   return (
     <div className={darkMode ? "dark" : ""}>
-      <div className="flex items-center justify-center h-[100vh] flex-col w-full bg-white dark:bg-neutral-900">
+      <div className="flex items-center justify-center h-[100vh] flex-col w-full bg-white dark:bg-gray-950">
         <h1 className="text-primary text-2xl font-semibold text-center">
           welcome to my portfolio
         </h1>

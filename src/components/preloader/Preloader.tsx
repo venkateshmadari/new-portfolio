@@ -2,17 +2,19 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { opacity, slideUp } from "./anim";
-// import styles from "./style.module.css";
+import { Sora } from "next/font/google";
+
+export const sora = Sora({ subsets: ["latin"], weight: ["400", "600"] });
 
 const words = [
-  "Hello",
   "Bonjour",
   "Ciao",
   "Olà",
   "やあ",
   "Hallå",
-  "नमस्ते",
-  "హలో",
+  "привет",
+  "こんにちは",
+  "Hello",
 ];
 
 export default function Preloader() {
@@ -24,13 +26,11 @@ export default function Preloader() {
   }, []);
 
   useEffect(() => {
-    if (index == words.length - 1) return;
-    setTimeout(
-      () => {
-        setIndex(index + 1);
-      },
-      index == 0 ? 1000 : 150
-    );
+    if (index === words.length - 1) return;
+    const timer = setTimeout(() => {
+      setIndex(index + 1);
+    }, index === 0 ? 1000 : 150);
+    return () => clearTimeout(timer);
   }, [index]);
 
   const initialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${
@@ -58,7 +58,7 @@ export default function Preloader() {
       variants={slideUp}
       initial="initial"
       exit="exit"
-      className="h-full w-full flex items-center justify-center fixed z-[99] bg-black"
+      className="h-full w-full flex items-center justify-center fixed z-[99] bg-black "
     >
       {dimension.width > 0 && (
         <>
@@ -66,13 +66,12 @@ export default function Preloader() {
             variants={opacity}
             initial="initial"
             animate="enter"
-            className="flex text-primary font-semibold text-3xl items-center justify-center absolute z-[1]"
+            className={`flex text-primary  font-semibold text-4xl items-center justify-center absolute z-[1]  ${sora.className}`}
           >
-            <span className="text-primary  mr-2 ">✺</span>
+            <span className="text-primary mr-2">✺</span>
             {words[index]}
-            {/* <span className="text-primary  ml-2 ">✺</span> */}
           </motion.p>
-          <svg className=" absolute top-0 w-full h-[calc(100%+300px)]">
+          <svg className="absolute top-0 w-full h-[calc(100%+300px)]">
             <motion.path
               variants={curve}
               initial="initial"
