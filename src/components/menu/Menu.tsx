@@ -19,7 +19,6 @@ const Menu = () => {
         </h1>
         <button
           className="flex items-center justify-center"
-       
         >
           <label className="relative inline-flex items-center cursor-pointer" >
             <input className="sr-only peer" type="checkbox"    onClick={enableMode} />
