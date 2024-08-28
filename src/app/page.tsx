@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import Preloader from "../components/preloader/Preloader";
 import Menu from "@/components/menu/Menu";
+import { NavbarDemo } from "@/components/navbar/Navbar";
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -24,6 +25,7 @@ export default function Home() {
         {isLoading && <Preloader />}
       </AnimatePresence>
       <Menu />
+      <NavbarDemo />
     </div>
   );
 }
