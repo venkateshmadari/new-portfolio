@@ -30,7 +30,7 @@ export const MenuItem = ({
     <div onMouseEnter={() => setActive(item)} className="relative ">
       <motion.p
         transition={{ duration: 0.3 }}
-        className={`cursor-pointer text-white hover:opacity-[0.9] dark:text-white ${sora.className}`}
+        className={`cursor-pointer  text-white hover:opacity-[0.9] dark:text-white ${sora.className}`}
       >
         {item}
       </motion.p>
@@ -41,16 +41,15 @@ export const MenuItem = ({
           transition={transition}
         >
           {active === item && (
-            <div className={`absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-4 ${sora.className}`}>
+            <div
+              className={`absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-4 ${sora.className}`}
+            >
               <motion.div
                 transition={transition}
-                layoutId="active" 
-                className="bg-neutral-90 border-white  dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border  dark:border-white/[0.2] shadow-xl"
+                layoutId="active"
+                className="bg-black rounded-2xl overflow-hidden border border-white dark:border-white/[0.2] shadow-xl backdrop-blur-sm"
               >
-                <motion.div
-                  layout 
-                  className="w-max h-full p-4 text-white"
-                >
+                <motion.div layout className="w-max h-full p-4 text-white">
                   {children}
                 </motion.div>
               </motion.div>

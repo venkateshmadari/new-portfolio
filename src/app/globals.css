@@ -12,3 +12,14 @@ body {
     text-wrap: balance;
   }
 }
+
+/* In your global.css or a relevant CSS file */
+.text-gradient {
+  background: linear-gradient(to right, #FF3600, #D90D3D);
+  /* background: linear-gradient(to right, #FF3600, #C6003B,); */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.bg-blur {
+  backdrop-filter: blur(10px);
+}
