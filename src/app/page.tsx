@@ -7,7 +7,8 @@ import { NavbarDemo } from "@/components/navbar/Navbar";
 import About from "@/components/menu/About";
 
 import { Sora } from "next/font/google";
-import { FloatingDockDemo } from "@/components/menu/FloatingDockDemo";
+import Divider from "@/components/menu/Divider";
+import Grid from "@/components/menu/Grid";
 
 const sora = Sora({ subsets: ["latin"] });
 
@@ -33,8 +34,9 @@ export default function Home() {
       </AnimatePresence>
       <BackgroundLinesDemo />
       <NavbarDemo />
+      <Divider />
       <About />
-
+      <Grid />
       {/* <div
         style={{
           position: "fixed",

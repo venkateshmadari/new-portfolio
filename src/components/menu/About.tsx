@@ -1,20 +1,35 @@
- export default function About() {
+import Image from "next/image";
+import eyeImage from "/public/eyes.jpeg";
+import { Sora, Forum } from "next/font/google";
+
+const sora = Sora({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+});
+
+const forum = Forum({
+  subsets: ["latin"],
+  weight: ["400"],
+});
+export default function About() {
   return (
-    <section className="flex items-center justify-center w-full flex-col px-4 py-12 bg-white dark:bg-gray-900">
-      <h2 className="text-3xl md:text-5xl font-bold text-center text-neutral-900 dark:text-white mb-4">
-        About Me
+    <section
+      className={` ${forum.className} flex items-center justify-center w-full flex-col`}
+    >
+      <h2 className="text-2xl md:text-3xl text-center text-white mb-4">
+        Who am i ?
       </h2>
-      <p className="max-w-2xl text-center text-neutral-700 dark:text-neutral-300 text-lg md:text-xl leading-relaxed">
-        I am a <strong>Front-End Engineer & Designer</strong> who takes great
-        pleasure in conceptualizing and bringing to life visually stunning
-        products. I am always eager to broaden my horizons and acquire new
-        skills that allow me to work more efficiently.
-      </p>
-      <p className="max-w-2xl text-center text-neutral-700 dark:text-neutral-300 text-lg md:text-xl leading-relaxed mt-4">
-        I have a passion for creating designs that not only look great but also
-        provide a seamless user experience. From wireframing to full-fledged
-        development, I thrive on delivering projects that are both functional
-        and aesthetically pleasing.
+      <div className="w-full h-[150px] md:h-[300px] py-4 relative">
+        <Image src={eyeImage} alt="eye-about" layout="fill" objectFit="cover" />
+      </div>
+      <p className="md:max-w-4xl px-8 text-center text-white text-base md:text-3xl leading-relaxed py-6">
+        I am a{" "}
+        <strong className="text-shade" style={{ letterSpacing: "1px" }}>
+          Front-End web Developer & Designer
+        </strong>{" "}
+        who takes great pleasure in conceptualizing and bringing to life
+        visually stunning products. I am always eager to broaden my horizons and
+        acquire new skills that allow me to work more efficiently.
       </p>
     </section>
   );
