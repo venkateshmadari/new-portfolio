@@ -1,6 +1,7 @@
 import Image from "next/image";
 import eyeImage from "/public/eyes.jpeg";
 import { Sora, Forum } from "next/font/google";
+import { Heading } from "./Heading";
 
 const sora = Sora({
   subsets: ["latin"],
@@ -16,9 +17,7 @@ export default function About() {
     <section
       className={` ${forum.className} flex items-center justify-center w-full flex-col`}
     >
-      <h2 className="text-2xl md:text-3xl text-center text-white mb-4">
-        Who am i ?
-      </h2>
+      <Heading heading={"Who am i ?"} />
       <div className="w-full h-[150px] md:h-[300px] py-4 relative">
         <Image src={eyeImage} alt="eye-about" layout="fill" objectFit="cover" />
       </div>

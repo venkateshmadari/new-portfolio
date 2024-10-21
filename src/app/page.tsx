@@ -5,10 +5,10 @@ import Preloader from "../components/preloader/Preloader";
 import { BackgroundLinesDemo } from "@/components/menu/Menu";
 import { NavbarDemo } from "@/components/navbar/Navbar";
 import About from "@/components/menu/About";
+import Content from "@/components/menu/Content";
 
-import { Sora } from "next/font/google";
+import {  Sora } from "next/font/google";
 import Divider from "@/components/menu/Divider";
-import Grid from "@/components/menu/Grid";
 
 const sora = Sora({ subsets: ["latin"] });
 
@@ -36,7 +36,8 @@ export default function Home() {
       <NavbarDemo />
       <Divider />
       <About />
-      <Grid />
+      {/* <Content/> */}
+      
       {/* <div
         style={{
           position: "fixed",
