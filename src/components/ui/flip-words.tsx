@@ -2,7 +2,12 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, LayoutGroup } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { Forum } from "next/font/google";
 
+const forum = Forum({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 export const FlipWords = ({
   words,
   duration = 3000,
@@ -15,7 +20,6 @@ export const FlipWords = ({
   const [currentWord, setCurrentWord] = useState(words[0]);
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
-  // thanks for the fix Julian - https://github.com/Julian-AT
   const startAnimation = useCallback(() => {
     const word = words[words.indexOf(currentWord) + 1] || words[0];
     setCurrentWord(word);
@@ -58,7 +62,7 @@ export const FlipWords = ({
           position: "absolute",
         }}
         className={cn(
-            "z-10 inline-block relative text-normal font-semibold text-left px-2",
+          "z-10 inline-block relative  text-left px-2",
           className
         )}
         key={currentWord}
@@ -84,7 +88,7 @@ export const FlipWords = ({
                   delay: wordIndex * 0.3 + letterIndex * 0.05,
                   duration: 0.2,
                 }}
-                className="inline-block"
+                className={`inline-block ${forum.className} font-bold text-3xl`}
               >
                 {letter}
               </motion.span>

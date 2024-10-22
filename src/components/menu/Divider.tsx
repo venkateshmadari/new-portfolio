@@ -1,6 +1,6 @@
 export default function Divider() {
   return (
-    <div className="divider flex items-center justify-center gap-1 pb-2 px-6">
+    <div className="divider flex items-center justify-center gap-1 pb-2 bg-black px-6">
       <div className="h-6 w-6 rounded-full  bg-shade" />
       <div className="h-6 w-6 rounded-full border-2 border-shade" />
       <div className="h-6 w-6 rounded-full border-2 border-shade" />

@@ -7,8 +7,9 @@ import { NavbarDemo } from "@/components/navbar/Navbar";
 import About from "@/components/menu/About";
 import Content from "@/components/menu/Content";
 
-import {  Sora } from "next/font/google";
+import { Sora } from "next/font/google";
 import Divider from "@/components/menu/Divider";
+import BottomNavbar from "@/components/navbar/BottomNavbar";
 
 const sora = Sora({ subsets: ["latin"] });
 
@@ -37,7 +38,7 @@ export default function Home() {
       <Divider />
       <About />
       {/* <Content/> */}
-      
+      <BottomNavbar />
       {/* <div
         style={{
           position: "fixed",
