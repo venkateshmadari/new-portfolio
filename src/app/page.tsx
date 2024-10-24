@@ -5,11 +5,12 @@ import Preloader from "../components/preloader/Preloader";
 import { BackgroundLinesDemo } from "@/components/menu/Menu";
 import { NavbarDemo } from "@/components/navbar/Navbar";
 import About from "@/components/menu/About";
-import Content from "@/components/menu/Content";
 
 import { Sora } from "next/font/google";
 import Divider from "@/components/menu/Divider";
 import BottomNavbar from "@/components/navbar/BottomNavbar";
+import Skills from "@/components/menu/Skills";
+import { Heading } from "@/components/menu/Heading";
 
 const sora = Sora({ subsets: ["latin"] });
 
@@ -37,19 +38,14 @@ export default function Home() {
       <NavbarDemo />
       <Divider />
       <About />
-      {/* <Content/> */}
-      <BottomNavbar />
-      {/* <div
-        style={{
-          position: "fixed",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          zIndex: 1000,
-        }}
-      >
-        <FloatingDockDemo />
-      </div> */}
+      <Divider />
+      <div className="flex items-center justify-center">
+
+      <Heading heading={"My Skills"} />
+      </div>
+      <div className="px-[3%] mb-8">
+        <Skills />
+      </div>
     </div>
   );
 }
